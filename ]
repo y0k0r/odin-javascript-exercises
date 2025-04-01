@@ -1,0 +1,23 @@
+const removeFromArray = function(items, itemsToRemove) {
+ 
+  for (const item of items) {
+    if (itemsToRemove instanceof Array) {
+      for (const itemToRemove of itemsToRemove){
+        if (itemToRemove === item) {
+          items.splice(itemToRemove, 1);
+        } 
+      } 
+    } else {
+        if (itemsToRemove === item) {
+          let index = items.indexOf(itemsToRemove);
+          items.splice(index, 1);
+        } 
+      }
+  }
+  console.log(items);
+  return items;
+};
+
+removeFromArray([1, 2, 3, 4], [2, 3])
+// Do not edit below this line
+module.exports = removeFromArray;
